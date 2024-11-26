@@ -132,3 +132,7 @@ button {
   color: #fff;
   font-size: 18px;  
 }
+
+button:hover {
+  background-color: #131314 ;
+}
