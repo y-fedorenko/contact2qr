@@ -1,0 +1,57 @@
+<!DOCTYPE html>  
+<html lang="en" dir="ltr"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yaroslav Fedorenko">
+    <meta name="description" content=""> 
+    <meta name="keywords" content="html, css, web, web development, javascript">
+    <title>Contact to QR converter</title> 
+    <link rel="icon center" type="image/x-icon" href="./src/media/favicon.png">
+    <link rel="stylesheet" href="./src/css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="./src/scripts/app.js" defer></script>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <video autoplay loop muted playsinline class="background-video">
+        <source src="./src/media/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <article class="container">
+        <div class="glass">
+          <h3>Convert your contacts to QR code</h3>
+          <div class="wrapper">
+            <form id="contactForm">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="Enter full name" required />
+          
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" placeholder="Enter phone number" required />
+          
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Enter email" required />
+          
+              <label for="address">Address</label>
+              <input type="text" id="address" placeholder="Enter address" />
+          
+              <label for="organization">Organization</label>
+              <input type="text" id="organization" placeholder="Enter organization" />
+          
+              <label for="title">Job Title</label>
+              <input type="text" id="title" placeholder="Enter job title" />
+          
+              <button type="button" id="generateButton">Generate QR Code</button>
+            </form>
+            <div class="image-container">
+              <!-- QR goes here -->
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer></footer>
+  </body>
+</html>
