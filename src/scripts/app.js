@@ -41,6 +41,7 @@ END:VCARD`;
         return;
       }
       imageContainer.appendChild(canvas); 
+      triggerHighLight(document.querySelector('canvas'), 'highlight-green');
     }
   );
 }
@@ -51,21 +52,21 @@ function isValid() {
   let valid = true;
 
   if (!fullName.value) {
-    triggerHighLight(fullName);
+    triggerHighLight(fullName, 'highlight');
     valid = false;
   }
   if (!phone.value) {
-    triggerHighLight(phone)
+    triggerHighLight(phone, 'highlight')
     valid = false;
   }
 
   return valid;
 }
 
-function triggerHighLight(input) {
-  input.classList.add('highlight');
+function triggerHighLight(input, highlight) {
+  input.classList.add(highlight);
   setTimeout(() => {
-    input.classList.remove("highlight");
+    input.classList.remove(highlight);
   }, 2000);
 }
 /*

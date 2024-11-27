@@ -70,6 +70,7 @@ h3 {
   color: #fff;
   font-size: 36px;
   text-align: center;
+  text-wrap: balance;
 }
 
 form { 
@@ -88,6 +89,7 @@ input[type=text], input[type=tel],input[type=email] {
   padding-left: 10px;
   background-color: #fff; 
   border: 2px solid transparent; 
+  border-radius: 5px;
 }
 
 input {
@@ -95,16 +97,21 @@ input {
 }
 
 .image-container {
+  display: grid;
+  place-content: center;
   height: 300px;
-  width: 300px;
+  width: auto;
 }
 
+.highlight-green {
+  animation: fadeOutGreen 2.5s forwards;
+}
 
 .highlight {
-  animation: fadeOut 2s forwards;
+  animation: fadeOutRed 2s forwards;
 }
 
-@keyframes fadeOut {
+@keyframes fadeOutRed {
   0% {
     background-color: #ffcccc; 
     border: 2px solid #ff0000; 
@@ -114,11 +121,29 @@ input {
   }
 }
 
+@keyframes fadeOutGreen {
+  0% {
+    background-color: #c4deac; 
+    border: 3px solid #4bfd05;
+    opacity: 0.6; 
+  }
+  100% {
+    background-color: none;
+    border: 3px solid transparent; 
+    opacity: 1;
+  }
+}
+
+
 canvas, img {
   margin-top: 8px;
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
   z-index: 1;
+  border: 3px solid #2f2f34;
+}
+img {
+  opacity: 0.1;
 }
 
 button {
@@ -135,4 +160,17 @@ button {
 
 button:hover {
   background-color: #131314 ;
+}
+
+@media only screen and (max-width: 768px) {
+.wrapper {
+  display: block;
+}
+form {
+  width: 100%;
+}  
+button {
+  width: 100%;
+  margin-bottom: 10px;
+}
 }
